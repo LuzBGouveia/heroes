@@ -1,0 +1,30 @@
+package fiap.com.br.heroes.services;
+
+import fiap.com.br.heroes.models.Hero;
+import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+import java.util.Random;
+
+@Service
+public class HeroService {
+    private List<Hero> repository = new ArrayList<>();
+
+    public List<Hero> getAllHeroes() {
+        return repository;
+    }
+
+    public Hero addHero(Hero hero){
+        hero.setId(Math.abs( new Random().nextLong() ));
+        repository.add(hero);
+        return hero;
+    }
+
+    public Optional<Hero> getHeroById(Long id){
+        return repository.stream()
+                .filter(hero -> hero.getId().equals(id)) // lambda expression - arrow function
+                .findFirst();
+    }
+}

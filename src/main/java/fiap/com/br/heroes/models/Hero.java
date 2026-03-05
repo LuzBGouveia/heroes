@@ -5,7 +5,7 @@ import lombok.*;
 @Data
 @AllArgsConstructor
 public class Hero {
-    private int id;
+    private Long id;
     private String name;
     private String superPower;
     private int level;
