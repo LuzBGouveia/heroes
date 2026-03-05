@@ -9,5 +9,5 @@ public class Hero {
     private String name;
     private String superPower;
     private int level;
-    private boolean isAlive;
+    private Boolean isAlive;
 }

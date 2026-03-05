@@ -5,7 +5,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 import java.util.Random;
 
 @Service
@@ -20,11 +19,5 @@ public class HeroService {
         hero.setId(Math.abs( new Random().nextLong() ));
         repository.add(hero);
         return hero;
-    }
-
-    public Optional<Hero> getHeroById(Long id){
-        return repository.stream()
-                .filter(hero -> hero.getId().equals(id)) // lambda expression - arrow function
-                .findFirst();
     }
 }
