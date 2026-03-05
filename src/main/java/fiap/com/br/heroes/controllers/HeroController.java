@@ -33,7 +33,7 @@ public class HeroController {
 
     @GetMapping("/{id}")
     public Hero getHeroById(@PathVariable Long id){
-        log.info("Obtendo dados do filme {}", id);
+        log.info("Obtendo dados do heroi {}", id);
         var optionalHero = service.getHeroById(id);
 
         if(optionalHero.isEmpty()){
