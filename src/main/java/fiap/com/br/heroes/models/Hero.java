@@ -1,11 +1,11 @@
 package fiap.com.br.heroes.models;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.*;
 
 @Data
 @AllArgsConstructor
 public class Hero {
+    private int id;
     private String name;
     private String superPower;
     private int level;
